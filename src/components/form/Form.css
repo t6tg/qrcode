@@ -1,0 +1,48 @@
+.form-generator {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    width: 80%;
+}
+
+.small-suggest {
+    color: #8e8e8e;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+.btn-gp {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.btn-ct {
+    width: 100%;
+}
+
+.required {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.qr-code {
+    display: none;
+}
+
+.small-download {
+    color: #8e8e8e;
+    display: flex;
+    justify-content: end;
+    font-size: 12px;
+    margin-top: 0.5rem;
+
+}
+
+@media (max-width: 768px) {
+    .form-generator {
+        width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
