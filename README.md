@@ -1,3 +1,3 @@
 # Utm and Qrcode Generator
 
-![screenshot](https://github.com/t6tg/qrcode/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/t6tg/qrcode/main/screenshot.png)
