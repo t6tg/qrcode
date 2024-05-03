@@ -4,6 +4,7 @@ import { useState } from 'react'
 import QRCode from 'react-qr-code'
 
 export default function Form() {
+    const [downloading, setDownloading] = useState<boolean>(false)
     const [qr, setQr] = useState<string>('')
     const [form, setForm] = useState<CampaignForm>({
         url: '',
@@ -66,6 +67,7 @@ export default function Form() {
 
         // generate qrcode and download
         if (gentype === 'qr') {
+            setDownloading(true)
             // delay 1 sec for render qr code
             setTimeout(() => {
                 const qrCode = document.querySelector('.qr-code')
@@ -86,6 +88,7 @@ export default function Form() {
                     a.click()
                 }
                 setQr('')
+                setDownloading(false)
             }, 1000)
         }
     }
@@ -280,7 +283,18 @@ export default function Form() {
                     className="btn btn-secondary btn-ct"
                     onClick={() => submit('qr')}
                 >
-                    <i className="bi bi-download"></i> Generate QR
+                    <div className={`clearfix${!downloading ? ' hide' : ''}`}>
+                        <div
+                            className="spinner-border spinner-border-sm mx-2"
+                            role="status"
+                        >
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                        Generate QR
+                    </div>
+                    <span className={downloading ? 'hide' : ''}>
+                        <i className="bi bi-download"></i> Generate QR
+                    </span>
                 </button>
             </div>
             <small className="small-download">
